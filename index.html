@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="TodoApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>First AngularJs program</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+</head>
+
+<body>
+    <div ng-controller="TodoController">
+        <h1>{{title}}</h1>
+        <ul>
+            <li ng-click="remove($index)" ng-repeat="item in list track by $index">{{item}}</li>
+        </ul>
+        <form>
+            <input type="text" ng-model="formItemText">
+            <button type="button" ng-click="addItem()">Add</button>
+        </form>
+        <button type="button" ng-click="supprItems()">Clear list</button>
+    </div>
+
+    <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
